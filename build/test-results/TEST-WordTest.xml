@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="WordTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2015-08-21T21:06:00" hostname="Drea" time="0.0">
+  <properties/>
+  <testcase name="find_returnsWordWithSameId_secondTask" classname="WordTest" time="0.0"/>
+  <testcase name="all_returnsAllWords" classname="WordTest" time="0.0"/>
+  <testcase name="addDefinition_addsDefToWord" classname="WordTest" time="0.0"/>
+  <testcase name="getDefinitions_containsArrayList_Array" classname="WordTest" time="0.0"/>
+  <testcase name="clear_removesAllWordsFromInstanceArray" classname="WordTest" time="0.0"/>
+  <testcase name="getTerm_returnsTerm" classname="WordTest" time="0.0"/>
+  <testcase name="addDefinition_addsDefinition" classname="WordTest" time="0.0"/>
+  <testcase name="find_returnsNullWhenNoWordFound_null" classname="WordTest" time="0.0"/>
+  <testcase name="word_instantiatesCorrectly_True" classname="WordTest" time="0.0"/>
+  <testcase name="getId_returnsWordId" classname="WordTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

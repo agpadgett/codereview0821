@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="DefinitionTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2015-08-21T21:06:00" hostname="Drea" time="0.0">
+  <properties/>
+  <testcase name="all_returnsAllInstancesOfDef_true" classname="DefinitionTest" time="0.0"/>
+  <testcase name="definition_instantiatesCorrectly_true" classname="DefinitionTest" time="0.0"/>
+  <testcase name="getId_returnsDefId" classname="DefinitionTest" time="0.0"/>
+  <testcase name="clear_removesAllDefsFromInstances" classname="DefinitionTest" time="0.0"/>
+  <testcase name="find_returnsDefWithSameId_secondTask" classname="DefinitionTest" time="0.0"/>
+  <testcase name="getEntry_instantiatesWithDef_true" classname="DefinitionTest" time="0.0"/>
+  <testcase name="find_returnsNullWhenNoDefFound_null" classname="DefinitionTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

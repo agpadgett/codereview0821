@@ -1,0 +1,12 @@
+add a definition to $word.getTerm()</h1>
+
+<form action="/words/$word.getId()" method="post">
+  <input id="wordId" name="wordId" type="hidden" value="$word.getId()">
+
+  <div class="form-group">
+    <label for="form-group">add definition</label>
+    <input id="newdef" name="newdef" type="text" class="form-control">
+  </div>
+
+  <button type="submit" class="btn btn-success">add definition</button>
+</form>
