@@ -28,7 +28,7 @@ public class WordTest{
     Word testWord = new Word("thing");
     assertTrue(testWord.getDefinitions() instanceof ArrayList);
   }
-  //Test if getdef array is empty?
+
   @Test
   public void addDefinition_addsDefinition(){
     Word testWord = new Word("thing");
