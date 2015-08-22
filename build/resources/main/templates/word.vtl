@@ -1,8 +1,10 @@
-definitions:
+<h3>definitions:</h3>
 
-#foreach($definition in $word.getDefinitions())
-  <h3>$definition.getEntry()</a></h3>
-#end
+<ul>
+  #foreach($definition in $word.getDefinitions())
+    <li>$definition.getEntry()</li>
+  #end
+</ul>
 
-<a href="/words/$word.getId()/definitions/new">add new definition</a>
-<a href="/">return to main page</a>
+<p><a href="/words/$word.getId()/definitions/new">add new definition</a></p>
+<p><a href="/words">return to word list</a></p>

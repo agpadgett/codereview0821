@@ -29,20 +29,10 @@ public class AppTest extends FluentTest{
   }
 
   @Test
-  public void wordIsCreated(){
-    goTo("http://localhost:4567/");
-    click("a", withText("add a new word"));
-    fill("#wordname").with("thing");
-    submit(".btn");
-    assertThat(pageSource()).contains("your word has been saved");
-  }
-
-  @Test
   public void newWordDisplayedOnIndex(){
     goTo("http://localhost:4567/words/new");
     fill("#wordname").with("thing");
     submit(".btn");
-    click("a", withText("view words"));
     assertThat(pageSource()).contains("thing");
   }
 
@@ -51,10 +41,29 @@ public class AppTest extends FluentTest{
     goTo("http://localhost:4567/words/new");
     fill("#wordname").with("thing");
     submit(".btn");
-    click("a", withText("view words"));
     click("a", withText("thing"));
     assertThat(pageSource()).contains("definitions");
   }
 
+  @Test
+  public void definitionsCanBeAdded(){
+    goTo("http://localhost:4567/words/new");
+    fill("#wordname").with("thing");
+    submit(".btn");
+    click("a", withText("thing"));
+    click("a", withText("add new definition"));
+    fill("#newdef").with("an object");
+    submit(".btn");
+    assertThat(pageSource()).contains("an object");
+  }
 
+  @Test
+  public void returnToWordListLinkWorks(){
+    goTo("http://localhost:4567/words/new");
+    fill("#wordname").with("thing");
+    submit(".btn");
+    click("a", withText("thing"));
+    click("a", withText("return to word list"));
+  }
+// Jake - I had some problems with navigating from the page that lists all the definitions of a wor
 }

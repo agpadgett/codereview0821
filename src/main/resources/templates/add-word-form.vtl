@@ -1,6 +1,9 @@
 <h1>add a new word</h1>
 
 <form action="/words" method="post">
+  <input id="wordId2" name="wordId2" type="hidden" value="$word.getId()">
+
+
   <label for="wordname">your new word</label>
   <input id="wordname" name="wordname" type="text">
   <button type="submit" class="btn btn-success">add</button?

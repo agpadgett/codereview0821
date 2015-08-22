@@ -1,8 +1,15 @@
-these are all the definitions you've added to $word.getTerm():
+<h3>these are all the definitions you've added to $word.getTerm():</h3>
 
-#foreach($definition in $word.getDefinitions())
-  <h3>$definition.getEntry()</a></h3>
-#end
+<br>
 
-<a href="/words/$word.getId()/definitions/new">Add a new definition</a>
-<a href="/">Return to Main Page</a>
+<ul>
+#if($definition)
+  <p>You haven't added any definitions yet</p>
+#else
+  #foreach($definition in $word.getDefinitions())
+    <p><li> $definition.getEntry()</a></li></p>
+  #end
+  </ul>
+
+<p><a href="/words/$word.getId()/definitions/new">Add a new definition</a></p>
+<p><a href="/words">return to word list</a></p>

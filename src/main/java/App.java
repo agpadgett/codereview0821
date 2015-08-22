@@ -13,11 +13,10 @@ public class App{
 
     get("/", (request, response ) -> {
       HashMap<String, Object> model = new HashMap<String, Object >();
-      model.put("words", request.session().attribute("words"));
+    //  model.put("words", request.session().attribute("words"));
       model.put("template", "templates/index.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
-   //make index.vtl(home page). Index vtl will let you go to the Word List (/words, words.vtl) or the Add New Word page (/words/new, word-form.vtl)
 
    get("words/new", (request, response) -> {
      HashMap<String, Object> model = new HashMap<String, Object>();
@@ -31,7 +30,8 @@ public class App{
      String wordname = request.queryParams("wordname");
      Word newWord = new Word(wordname);
      model.put("word", newWord);
-     model.put("template", "templates/success.vtl");
+     model.put("words", Word.all());
+     model.put("template", "templates/words.vtl");
      return new ModelAndView(model, layout);
    }, new VelocityTemplateEngine());
    // success page, folloing submission of Add form.
@@ -39,11 +39,15 @@ public class App{
 
    get("/words", (request, response) -> {
      HashMap<String, Object> model = new HashMap<String, Object>();
+    //  String wordname = request.queryParams("wordname");
+    //  Word newWord = new Word(wordname);
+    //  model.put("word", newWord);
      model.put("words", Word.all());
      model.put("template", "templates/words.vtl");
      return new ModelAndView(model, layout);
    }, new VelocityTemplateEngine());
    // list of words you've added. can click specific words
+   //note - if you save "word" as a key in the model hashmap here, it'll spit out "word.getTerm()."
 
    get("/words/:id", (request, response) -> {
      HashMap<String, Object> model = new HashMap<String, Object>();
@@ -67,11 +71,9 @@ public class App{
      Definition newDefinition = new Definition(newdef);
      word.addDefinition(newDefinition);
      model.put("word", word);
-     model.put("template", "templates/definitions.vtl");
+     model.put("template", "templates/word.vtl");
      return new ModelAndView(model, layout);
    }, new VelocityTemplateEngine());
-
-
 
   }
 
